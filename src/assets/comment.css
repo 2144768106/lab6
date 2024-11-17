@@ -1,0 +1,47 @@
+/* assets/comment-section.css */
+
+/* 评论区域的整体样式 */
+.comment-section {
+    margin-top: 20px; /* 在评论区域上方添加20像素的外边距 */
+  }
+  
+  /* 评论区域标题的样式 */
+  .comment-section h3 {
+    font-size: 1.2em; /* 设置标题字体大小为1.2倍正常大小 */
+  }
+  
+  /* 评论列表的样式 */
+  .comment-section ul {
+    list-style: none; /* 移除列表项前的默认项目符号 */
+    padding: 0; /* 移除默认的内边距 */
+  }
+  
+  /* 单个评论项的样式 */
+  .comment-section li {
+    margin-bottom: 10px; /* 在评论项下方添加10像素的外边距 */
+  }
+  
+  /* 评论输入框的样式 */
+  .comment-section textarea {
+    width: 100%; /* 输入框宽度设置为100% */
+    padding: 8px; /* 输入框内边距为8像素 */
+    margin-bottom: 10px; /* 输入框下方添加10像素的外边距 */
+    border-radius: 4px; /* 输入框边角设置为4像素的圆角 */
+    border: 1px solid #ccc; /* 输入框边框为1像素的灰色实线 */
+  }
+  
+  /* 提交按钮的样式 */
+  .comment-section button {
+    padding: 10px 20px; /* 按钮内边距为10像素上下，20像素左右 */
+    background-color: #007bff; /* 按钮背景颜色设置为蓝色 */
+    color: white; /* 按钮文字颜色设置为白色 */
+    border: none; /* 移除按钮边框 */
+    border-radius: 5px; /* 按钮边角设置为5像素的圆角 */
+    cursor: pointer; /* 鼠标悬停时显示指针形状 */
+    transition: background-color 0.3s ease; /* 背景色变化时的过渡效果 */
+  }
+  
+  /* 提交按钮悬停时的样式 */
+  .comment-section button:hover {
+    background-color: #0056b3; /* 鼠标悬停时按钮背景颜色变深 */
+  }

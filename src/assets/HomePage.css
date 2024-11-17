@@ -1,0 +1,47 @@
+
+.country-card {
+background-color: #fdfdfd;
+padding: 8px 12px; /* 减少内边距 */
+margin: 10px 0;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgb(24, 61, 181);
+transition: transform 0.2s ease, box-shadow 0.3s ease;
+width: 250px; /* 设置固定宽度 */
+font-size: 14px; /* 减小字体大小 */
+margin-left: 10px;
+margin-right: 10px;
+}
+/* 鼠标悬停时，放大卡片并添加阴影 */
+.country-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+}
+
+.country-card h2 {
+  margin-bottom: 8px;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* 当鼠标悬停时，按钮背景色变暗 */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
