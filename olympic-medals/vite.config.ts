@@ -10,9 +10,11 @@ export default defineConfig({
     }
   },
   build: {
+    target: 'esnext',
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: false,
-    minify: 'terser'
+    rollupOptions: {
+      external: ['@rollup/rollup-linux-x64-gnu']
+    }
   }
 })
