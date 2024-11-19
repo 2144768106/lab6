@@ -1,15 +1,6 @@
 <template>
   <div class="container">
-    <!-- 奥运五环 -->
-    <div class="olympic-rings">
-      <div class="ring ring-blue"></div>
-      <div class="ring ring-yellow"></div>
-      <div class="ring ring-black"></div>
-      <div class="ring ring-green"></div>
-      <div class="ring ring-red"></div>
-    </div>
-
-    <h1 class="page-title">2024 巴黎奥运会奖牌榜</h1>
+    <h1 class="page-title">奥运奖牌榜</h1>
     
     <!-- 加载状态 -->
     <div v-if="loading" class="loading-container">
@@ -17,7 +8,7 @@
     </div>
 
     <!-- 数据展示 -->
-    <div v-else class="fade-in medal-content">
+    <div v-else class="fade-in">
       <div class="table-container">
         <table>
           <thead>
@@ -55,17 +46,18 @@
               </td>
               <td class="country-name">
                 <div class="country-info">
-                  <img 
-                    :src="`https://flagcdn.com/48x36/${country.code.toLowerCase()}.png`"
-                    :alt="country.name"
-                    class="country-flag"
-                  />
+                  <div class="flag-wrapper">
+                    <country-flag 
+                      :country="country.code.toLowerCase()" 
+                      class="country-flag"
+                    />
+                  </div>
                   <span class="country-name-text">{{ country.name }}</span>
                 </div>
               </td>
-              <td class="medal-count gold">{{ country.gold }}</td>
-              <td class="medal-count silver">{{ country.silver }}</td>
-              <td class="medal-count bronze">{{ country.bronze }}</td>
+              <td class="medal-count">{{ country.gold }}</td>
+              <td class="medal-count">{{ country.silver }}</td>
+              <td class="medal-count">{{ country.bronze }}</td>
               <td class="total-count">{{ country.gold + country.silver + country.bronze }}</td>
             </tr>
           </tbody>
@@ -80,7 +72,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { medalApi } from '../api/medalApi'
 import type { Country } from '../types/medal'
-import NProgress from 'nprogress'
+import CountryFlag from 'vue-country-flag-next'
 
 const router = useRouter()
 const countries = ref<Country[]>([])
@@ -95,14 +87,10 @@ const sortedCountries = computed(() => {
 })
 
 const goToDetail = (id: number) => {
-  NProgress.start()
-  router.push(`/country/${id}`).finally(() => {
-    NProgress.done()
-  })
+  router.push(`/country/${id}`)
 }
 
 onMounted(async () => {
-  NProgress.start()
   try {
     const response = await medalApi.getCountries()
     countries.value = response.data
@@ -110,12 +98,39 @@ onMounted(async () => {
     console.error('获取数据失败:', error)
   } finally {
     loading.value = false
-    NProgress.done()
   }
 })
 </script>
 
 <style scoped>
+.country-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 6px;
+}
+
+.flag-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.country-flag {
+  width: 50px !important;
+  height: 33px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+.country-name-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2c3e50;
+  line-height: 21px;
+  height: 100%;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -204,26 +219,6 @@ th {
   margin: 0 auto;
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(255, 107, 107, 0.2);
-}
-
-.country-info {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px;
-}
-
-.country-flag {
-  width: 40px;
-  height: 30px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-}
-
-.country-name-text {
-  font-size: 1.1rem;
-  font-weight: 500;
 }
 
 .medal-count {

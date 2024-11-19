@@ -102,11 +102,11 @@ const dialogVisible = ref(false)
 const selectedCountry = ref<Country | null>(null)
 const newComment = ref('')
 const searchQuery = ref('')
-const sortBy = ref<keyof Country>('goldCount')
+const sortBy = ref<'gold' | 'silver' | 'bronze'>('gold')
 
 // 过滤国家列表
 const filteredCountries = computed(() => {
-  return store.countries.filter(country => 
+  return store.countries.filter((country: Country) => 
     country.name.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 })

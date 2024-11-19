@@ -8,10 +8,10 @@ import 'nprogress/nprogress.css'
 
 // 配置 NProgress
 NProgress.configure({ 
-  showSpinner: false,  // 不显示加载圆圈
-  easing: 'ease',      // 动画方式
-  speed: 500,          // 动画速度
-  minimum: 0.2         // 最小百分比
+  showSpinner: false,
+  easing: 'ease',
+  speed: 500,
+  minimum: 0.2
 })
 
 // 路由钩子

@@ -23,9 +23,8 @@
       <!-- 国家信息 -->
       <div class="country-header">
         <div class="country-info">
-          <img 
-            :src="`https://flagcdn.com/96x72/${country?.code.toLowerCase()}.png`"
-            :alt="country?.name"
+          <country-flag 
+            :country="country?.code?.toLowerCase() || ''" 
             class="country-flag"
           />
           <h2 class="country-title">{{ country?.name }}</h2>
@@ -123,6 +122,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { medalApi } from '../api/medalApi'
 import type { Country, MedalDetail, Comment } from '../types/medal'
+import CountryFlag from 'vue-country-flag-next'
 import NProgress from 'nprogress'
 
 // 导入奖牌图片
@@ -217,8 +217,10 @@ const getMedalTypeText = (type: string) => {
 }
 
 .country-title {
-  font-size: 2.5rem;
-  color: var(--text-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
@@ -308,32 +310,29 @@ const getMedalTypeText = (type: string) => {
   }
 }
 
+.flag-container {
+  width: 64px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.country-flag {
+  width: 48px !important;
+  height: 36px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
 .country-info {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
-
-.country-flag {
-  width: 80px;
-  height: 60px;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-  object-fit: cover;
-}
-
-.country-flag:hover {
-  transform: scale(1.05);
-}
-
-.country-code {
-  background-color: #f0f0f0;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 1.2em;
-  color: #666;
 }
 
 .btn-primary {
