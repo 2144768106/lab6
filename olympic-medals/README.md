@@ -11,3 +11,11 @@ Li Siyuan 20222101
 Dai Yicheng 20222
 The URL of the deployed website***
 ***Please note: You cannot deploy the GitHub Classroom repository on the free version of Vercel. You need to fork the project to your personal GitHub account before deploying it.
+
+# Olympic Medals
+
+## 部署要求
+- Node.js >= 18.0.0
+- npm >= 10.0.0
+
+## 安装步骤
