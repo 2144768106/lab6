@@ -5,19 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "build-only": "vite build",
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.273",
-    "country-flag-icons": "^1.5.13",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
-    "vue-country-flag-next": "^2.3.2",
-    "vue-flag-icon": "^2.1.0",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
