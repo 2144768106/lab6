@@ -1,0 +1,94 @@
+{
+  "countries": [
+    {
+      "id": 1,
+      "name": "中国",
+      "code": "CHN",
+      "gold": 38,
+      "silver": 32,
+      "bronze": 18
+    },
+    {
+      "id": 2,
+      "name": "美国",
+      "code": "USA",
+      "gold": 39,
+      "silver": 41,
+      "bronze": 33
+    },
+    {
+      "id": 3,
+      "name": "日本",
+      "code": "JPN",
+      "gold": 27,
+      "silver": 14,
+      "bronze": 17
+    },
+    {
+      "id": 4,
+      "name": "英国",
+      "code": "GBR",
+      "gold": 22,
+      "silver": 21,
+      "bronze": 22
+    },
+    {
+      "id": 5,
+      "name": "俄罗斯奥委会",
+      "code": "ROC",
+      "gold": 20,
+      "silver": 28,
+      "bronze": 23
+    }
+  ],
+  "medalDetails": [
+    {
+      "id": 1,
+      "countryId": 1,
+      "sport": "游泳",
+      "athlete": "张雨霏",
+      "medalType": "gold",
+      "date": "2024-03-15"
+    },
+    {
+      "id": 2,
+      "countryId": 1,
+      "sport": "乒乓球",
+      "athlete": "马龙",
+      "medalType": "gold",
+      "date": "2024-03-16"
+    },
+    {
+      "id": 3,
+      "countryId": 2,
+      "sport": "游泳",
+      "athlete": "Katie Ledecky",
+      "medalType": "gold",
+      "date": "2024-03-15"
+    },
+    {
+      "id": 4,
+      "countryId": 3,
+      "sport": "柔道",
+      "athlete": "大野将平",
+      "medalType": "gold",
+      "date": "2024-03-14"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "countryId": 1,
+      "content": "中国队加油！",
+      "userName": "体育迷",
+      "createTime": "2024-03-15 14:30:00"
+    },
+    {
+      "id": 2,
+      "countryId": 1,
+      "content": "期待更多金牌！",
+      "userName": "奥运粉丝",
+      "createTime": "2024-03-15 15:20:00"
+    }
+  ]
+} 
