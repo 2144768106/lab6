@@ -1,6 +1,6 @@
-import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
   plugins: [vue()],
@@ -10,11 +10,7 @@ export default defineConfig({
     }
   },
   build: {
-    target: 'esnext',
     outDir: 'dist',
-    assetsDir: 'assets',
-    rollupOptions: {
-      external: ['@rollup/rollup-linux-x64-gnu']
-    }
+    assetsDir: 'assets'
   }
 })
